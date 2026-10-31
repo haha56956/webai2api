@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "webai2api 凭证助手",
+  "version": "1.2.0",
+  "description": "检测 DeepSeek / Qwen / DuckDuckGo 的登录状态，一键提取 webai2api 所需的 token、Cookie、vqd_hash 与 x-fe 请求头。",
+  "minimum_chrome_version": "102",
+  "permissions": [
+    "cookies",
+    "webRequest",
+    "storage",
+    "scripting",
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://chat.deepseek.com/*",
+    "https://chat.qwen.ai/*",
+    "https://duckduckgo.com/*",
+    "https://duck.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "webai2api 凭证助手",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.deepseek.com/*",
+        "https://chat.qwen.ai/*",
+        "https://duckduckgo.com/*",
+        "https://duck.ai/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

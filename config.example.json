@@ -1,0 +1,107 @@
+{
+  "listen": {
+    "host": "127.0.0.1",
+    "port": 8787
+  },
+  "api_keys": [
+    "sk-webai2api-change-me"
+  ],
+  "rpm": 30,
+  "rpm_per_provider": {},
+  "timeout": 180,
+  "proxy": "",
+  "log_level": "INFO",
+  "default_provider": "qwen",
+  "cors_origins": [
+    "*"
+  ],
+  "max_body_bytes": 16777216,
+  "providers": {
+    "deepseek": {
+      "enabled": false,
+      "base_url": "https://chat.deepseek.com",
+      "token": "",
+      "cookies": "",
+      "headers": {},
+      "models": {
+        "deepseek-chat": {
+          "model_type": "default",
+          "thinking": false,
+          "search": false
+        },
+        "deepseek-reasoner": {
+          "model_type": "expert",
+          "thinking": true,
+          "search": false
+        }
+      },
+      "thinking": false,
+      "search": false,
+      "pow_backend": "auto",
+      "timeout": 180,
+      "proxy": ""
+    },
+    "qwen": {
+      "enabled": true,
+      "base_url": "https://chat.qwen.ai",
+      "token": "",
+      "cookies": "",
+      "headers": {},
+      "models": {
+        "qwen3.8-max": "qwen3.8-max",
+        "qwen3.7-plus": "qwen3.7-plus",
+        "qwen3.5-plus": "qwen3.5-plus",
+        "qwen3.5-flash": "qwen3.5-flash",
+        "qwen3-coder-plus": "qwen3-coder-plus"
+      },
+      "chat_mode": "",
+      "client_version": "0.2.84",
+      "user_agent": "",
+      "auto_cookies": true,
+      "auto_bxua": true,
+      "bx_umidtoken": "",
+      "auto_delete_chat": false,
+      "timeout": 300,
+      "proxy": ""
+    },
+    "duckduckgo": {
+      "enabled": true,
+      "base_url": "https://duck.ai",
+      "cookies": "",
+      "headers": {},
+      "models": {
+        "gpt-5.4-mini": "gpt-5.4-mini",
+        "gpt-6-luna": "gpt-6-luna",
+        "claude-haiku-4-5": "claude-haiku-4-5",
+        "mistral-small-2603": "mistral-small-2603",
+        "tinfoil/gpt-oss-120b": "tinfoil/gpt-oss-120b",
+        "tinfoil/gemma4-31b": "tinfoil/gemma4-31b",
+        "gpt-5.6-terra": "gpt-5.6-terra",
+        "gpt-5.6-sol": "gpt-5.6-sol",
+        "claude-sonnet-4-6": "claude-sonnet-4-6",
+        "claude-opus-4-8": "claude-opus-4-8"
+      },
+      "vqd_hash": "",
+      "user_agent": "",
+      "timeout": 120,
+      "proxy": "",
+      "fe_version": "",
+      "fe_signals": ""
+    }
+  },
+  "rpm_window": 60,
+  "queue": {
+    "enabled": true,
+    "max_size": 200,
+    "max_wait": 120
+  },
+  "fallback": {
+    "enabled": true,
+    "order": [
+      "qwen",
+      "duckduckgo"
+    ],
+    "max_attempts": 3,
+    "models": {}
+  }
+}

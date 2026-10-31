@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>webai2api 凭证助手</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>webai2api 凭证助手</h1>
+      <p class="subtitle">检测登录状态，一键提取上游凭证</p>
+    </header>
+
+    <nav id="tabs" class="tabs" aria-label="选择站点"></nav>
+
+    <section class="card">
+      <div id="status" class="status">正在检测…</div>
+      <dl id="fields" class="fields"></dl>
+
+      <div class="actions">
+        <button id="refresh" type="button">重新获取</button>
+        <button id="copy" type="button" class="primary">复制配置片段</button>
+        <button id="download" type="button" class="ghost">下载 config.json</button>
+      </div>
+
+      <label class="output-label" for="output">配置预览</label>
+      <textarea id="output" readonly rows="10" spellcheck="false"></textarea>
+      <p id="hint" class="hint"></p>
+    </section>
+
+    <footer>所有数据仅在本地浏览器处理，不会上传到任何服务器。</footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
